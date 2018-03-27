@@ -26,7 +26,7 @@ public class Projeto_Escola {
      */
     public static void main(String[] args) throws ParseException {
         int escMenu = 0;
-
+        int busca = 0;
         ArrayList<Disciplina> materias = new ArrayList<>();
         ArrayList<Aluno> alunolist = new ArrayList<>();
         ArrayList<Professor> listProfessor = new ArrayList<>();
@@ -100,28 +100,49 @@ public class Projeto_Escola {
                     break;
                 }
                 case 4: {
-                    int disciplinasCadastradas = Integer.parseInt(JOptionPane.showInputDialog("Qual disciplina você que consultar"));
-                    materias.get(disciplinasCadastradas);
-                    JOptionPane.showMessageDialog(null, materias.toString());
+                    int disciplinasCadastradas = Integer.parseInt(JOptionPane.showInputDialog("Qual disciplina você que consultar por codg digite1 ou nome digite 2"));
+                    
+
+                    switch (disciplinasCadastradas) {
+                        case 1: {
+                            int disciplinasCadastradasNome = Integer.parseInt(JOptionPane.showInputDialog("Qual disciplina você que consultar por nome"));
+                            materias.get(disciplinasCadastradasNome);
+                            JOptionPane.showMessageDialog(null, materias.toString());
+
+                            break;
+                        }
+                        case 2: {
+                            String Disciplina = JOptionPane.showInputDialog("iNFORME O nome da disciplina");
+                            for (int i = 0; i < materias.size(); i++) {
+                                if (materias.contains(busca)) {
+                                    JOptionPane.showMessageDialog(null, materias.toString());
+                                    break;
+
+                                }
+
+                            }
+                            break;
+                        }
+                        
+                    }
+
                     break;
+
                 }
+
                 case 5: {
                     int alunosCadastrados = Integer.parseInt(JOptionPane.showInputDialog("Qual aluno você que consultar"));
                     alunolist.get(alunosCadastrados);
                     JOptionPane.showMessageDialog(null, alunolist.toString());
                     break;
                 }
-                
+
                 case 6: {
                     int professoresCadastrados = Integer.parseInt(JOptionPane.showInputDialog("Qual professor você que consultar"));
                     listProfessor.get(professoresCadastrados);
                     JOptionPane.showMessageDialog(null, listProfessor.toString());
                     break;
                 }
-                
-                
-                
-                
 
             }
 
